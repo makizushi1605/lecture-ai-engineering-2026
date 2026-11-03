@@ -77,3 +77,20 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+def make_quiz(lecture: int) -> str:
+    """指定した回の用語から1つを選び、
+    確認問題と答えを返す。
+    
+    「第2回の確認問題を出して」のように、
+    復習用の問題を求められたときに使う。
+    """
+    # 1. load_glossary() から lecture が一致する用語を集める
+    # 2. 1 つ選ぶ（random.choice ）
+    # 3. 問題と答えを文字列で返す（ json.dumps など）
+
+def make_answer(lecture: int) -> str:
+    """make_quiz() で出した問題の解説を出力する
+    """
+    # 1. make_quiz() で作成した問題と答えから、lectureが一致する用語を集める
+    # 2. glossary.jsonから"definition"を抽出し、文字列で返す
