@@ -29,7 +29,6 @@ server.tool()(tools.search_glossary)
 
 # TODO(宿題・基礎): get_lecture_summary も公開しよう
 
-
 def main() -> None:
     parser = argparse.ArgumentParser(description="用語集 MCP サーバー")
     parser.add_argument("--http", action="store_true", help="Streamable HTTP で起動する（既定は stdio）")
