@@ -15,7 +15,13 @@
 
 <!-- 基礎・実装・発展のどれか1つに取り組めば完了です。 -->
 
-- 取り組んだレベル：基礎 / 実装 / 発展
-- やったこと：
+- 取り組んだレベル：基礎
+- やったこと：server.tool()(tools.get_lecture_summary)をmcpサーバーのツールに追加し、MCPサーバー経由でget_lecture_summaryが呼ばれることを確認する。
 - 結果：
+uv run python -m app.mcp_agent --trace \ "第2回では何を学びますか？ 
+と入力すると、
+[tool call]   glossary_get_lecture_summary({'lecture': 2})
+と出力され、MCPサーバー経由でget_lecture_summaryが呼ばれることを確認した。
+
 - 気づき・疑問：
+MCPサーバー経由で呼ばれた場合、利用トークン数やコストは増加するのか疑問を持った。
